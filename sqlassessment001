@@ -1,0 +1,61 @@
+Name:AncyPhiloRosePushparaj
+Employeeid:11849977
+
+1)Find employee(s) who had most swipes for a given day
+  select max(in_time) from Employee;
+
+2)Find time in office(login time) for each employee at each swipe
+ select in_time from Employee where in_time is not null;
+
+4)update the recent swipe with first swipe in_time details (if and only if more than one swipe exists per employee
+
+  select in_time case when swipe>1 
+                      then update first_swipe set='recent swipe'
+                      end result as Employee;
+
+5)Find employee(s) who did not swipe atleast once for on a given day
+
+ select * from Employee where in_time is null;
+
+3. With below table, convert to expected output shown
+
+eid        name           sal         month
+
+101         A             100         Jan
+
+101         A             200         Feb
+
+102         B             200         Jan
+
+102         B             300         Feb
+
+103         C             200         Jan
+
+103         C             200         Feb
+
+ 
+
+expected output:
+
+ 
+
+eid        name           jan         feb
+
+101         A             100         200
+
+102         B             200         300
+
+103         C             200         200
+
+104         D             100         300
+
+select distinct(eid,name) from Employee order by jan;
+update eid,name set='104' and set='D';
+
+2.Find employee who had maximum salary for a given month or have maximum salary difference amoung other employee.
+
+If there is tie on maximum salary for given month, employee with maximum salary in upcoming month will be winner
+
+select max(salary) from employee;
+
+
