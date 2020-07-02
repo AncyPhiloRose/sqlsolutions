@@ -1,0 +1,21 @@
+employeeid:11849977
+
+11.Fetch count of authors belong to same continent(eg. Berlin -> Europe)
+   select count(author_name) from author;
+
+10.Fetch author information and publisher information who have publisher with recent publish_start_date.
+   select a.author_id,p.publish_id from author a inner join publisher p on a.publish_id=p.publish_id;
+
+9.Fetch author details who have lower case in author_name
+  select lower(author_name) from author;
+
+8.Fetch author details who do not have initial in their name
+ select * from author where upper(name) is not null;
+
+7.Fetch author details who have more than one initial before their name
+ select * from author where upper(name)>=1;
+
+
+
+
+
