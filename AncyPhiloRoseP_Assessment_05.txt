@@ -1,0 +1,30 @@
+11849977
+Ancy Philo Rose P
+
+1)select emp_id,emp_name,desc_name,place_desc,proj_name case when desc_name is null then 'Unknown Designation'
+                                                           when place_desc is null then 'Others'
+                                                           when place_desc='newyork' then 'USA'
+                                                           when proj_name is null then 'Unknown Project'
+                                                           end from employee e join designation d on e.desc_id=d.desc_id
+                                                           join place p on p.place_id=e.place_id join project pr 
+                                                           on pr.project_id=e.project_id;
+
+2)select emp_id,emp_name,project_role case when project_role='developer'and place_type='offshore' then 'teammember'
+                                           when project_role='developer' and place_type='nearshore'  then 'teamlead'   
+                                           when project_role='developer' and place_type='onshore' then 'BA'
+                                           when project_role='lead' and place_type ='onshore' then 'scrummaster'
+                                           when project_role='others' then 'contractor'
+                                           else 'shadow'
+                                           end from employee e join designation d on e.desc_id=d.desc_id;
+
+3)select desc_name from designation union select place_desc from place union select proj_name from project
+  where project_role='developer';
+
+4)select emp_name,desc_name,place_desc,proj_name case when emp_name and desc_name and place_desc and proj_name is null 
+                                                 then 'others';
+
+5)select s.salesman_name,c.cust_name,c.customer_city,s.salesman_city from customer c join salesman s
+  on c.city=s.city(select distinct(salesman_name,cut_name) from customer c join salesman s;
+
+                                                           
+                                                           
